@@ -1,6 +1,8 @@
 import { TodoItem } from "./TodoItem";
 
-export function TodoList({ todos, toggleTodo, deleteTodo }) {
+export function TodoList(props) {
+  const {todos,toggleTodo,deleteTodo} = props
+  console.log(props)
   return (
     <ul className="list">
       {todos.length === 0 && "No Todos"}
@@ -8,7 +10,7 @@ export function TodoList({ todos, toggleTodo, deleteTodo }) {
         return (
           <TodoItem
             {...todo}
-            key={todo.key}
+            key={todo.id}
             toggleTodo={toggleTodo}
             deleteTodo={deleteTodo}
           />
